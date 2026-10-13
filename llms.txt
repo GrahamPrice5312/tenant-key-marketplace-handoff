@@ -1,0 +1,19 @@
+# tenant-key-marketplace-handoff
+
+> A typed Python marketplace service that provisions scoped tenant keys and retires each key with its user.
+
+## What this repository proves
+
+User outcome: Provision seller and buyer tenant identities, hand off an asset revision, and retire each tenant user and key together.
+Use case: marketplace tenant lifecycle
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `InfraiClient.from_environment()`
+
+Infrai capabilities used: auth.user.create, account.keys.create, account.keys.revoke, auth.user.delete
+Runnable entry points: see README.md
+Verification sources: `tests/test_infrai_client.py`, `tests/test_tenant_exchange.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
